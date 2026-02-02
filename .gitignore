@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 临时文件
+*_temp.md
+*.tmp
+~$*
+
+# Office临时文件
+~$*.docx
+~$*.doc
+
+# 备份文件
+*.bak
+*.backup

@@ -1,0 +1,277 @@
+<mxfile host="65bd71144e">
+    <diagram name="Page-1" id="baixi005">
+        <mxGraphModel dx="805" dy="1059" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="820" pageHeight="420" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="root" value="百戏" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="200" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="dim1_title" value="按表演性质" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontFamily=SimSun;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="70" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="dim2_title" value="按戏剧范畴" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontFamily=SimSun;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="200" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="dim3_title" value="按故事性" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontFamily=SimSun;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="330" width="80" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="cat1a" value="奇异技能" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="50" width="70" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="cat1b" value="滑稽嘲谑" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="82" width="70" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="cat1c" value="武力对抗" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="114" width="70" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="item1a" value="幻术、杂技、驯兽、拟兽" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontFamily=SimSun;fillColor=#ffe6e6;strokeColor=#cc6666;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="50" width="140" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="item1b" value="歌舞戏、滑稽戏" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontFamily=SimSun;fillColor=#e6ffe6;strokeColor=#66cc66;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="82" width="100" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="item1c" value="角抵" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontFamily=SimSun;fillColor=#ffe6e6;strokeColor=#cc6666;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="114" width="50" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="cat2a" value="属戏剧范畴" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="180" width="80" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="cat2b" value="不属戏剧范畴" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="230" width="90" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="item2a" value="歌舞戏、滑稽戏、角抵戏、拟兽" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontFamily=SimSun;fillColor=#fff5e6;strokeColor=#cc9933;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="180" width="180" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="item2b" value="幻术、杂技、驯兽" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontFamily=SimSun;fillColor=#ffe6e6;strokeColor=#cc6666;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="230" width="110" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="cat3a" value="有故事性" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="310" width="70" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="cat3b" value="无故事性" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="360" width="70" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="item3a" value="滑稽戏、歌舞戏、角抵" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontFamily=SimSun;fillColor=#fff5e6;strokeColor=#cc9933;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="310" width="140" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="item3b" value="幻术、杂技、驯兽、拟兽" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontFamily=SimSun;fillColor=#ffe6e6;strokeColor=#cc6666;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="360" width="140" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="line_main" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#333333;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="110" y="220" as="sourcePoint"/>
+                        <mxPoint x="140" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_vert" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#333333;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="140" y="83" as="sourcePoint"/>
+                        <mxPoint x="140" y="343" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_d1" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#333333;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="140" y="83" as="sourcePoint"/>
+                        <mxPoint x="180" y="83" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_d2" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#333333;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="140" y="213" as="sourcePoint"/>
+                        <mxPoint x="180" y="213" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_d3" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#333333;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="140" y="343" as="sourcePoint"/>
+                        <mxPoint x="180" y="343" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c1_vert" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="62" as="sourcePoint"/>
+                        <mxPoint x="280" y="126" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c1_h" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="83" as="sourcePoint"/>
+                        <mxPoint x="280" y="83" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c1a" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="62" as="sourcePoint"/>
+                        <mxPoint x="320" y="62" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c1b" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="94" as="sourcePoint"/>
+                        <mxPoint x="320" y="94" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c1c" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="126" as="sourcePoint"/>
+                        <mxPoint x="320" y="126" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_i1a" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="390" y="62" as="sourcePoint"/>
+                        <mxPoint x="440" y="62" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_i1b" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="390" y="94" as="sourcePoint"/>
+                        <mxPoint x="440" y="94" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_i1c" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="390" y="126" as="sourcePoint"/>
+                        <mxPoint x="440" y="126" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c2_vert" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="192" as="sourcePoint"/>
+                        <mxPoint x="280" y="242" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c2_h" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="213" as="sourcePoint"/>
+                        <mxPoint x="280" y="213" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c2a" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="192" as="sourcePoint"/>
+                        <mxPoint x="320" y="192" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c2b" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="242" as="sourcePoint"/>
+                        <mxPoint x="320" y="242" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_i2a" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="400" y="192" as="sourcePoint"/>
+                        <mxPoint x="450" y="192" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_i2b" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="410" y="242" as="sourcePoint"/>
+                        <mxPoint x="450" y="242" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c3_vert" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="322" as="sourcePoint"/>
+                        <mxPoint x="280" y="372" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c3_h" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="343" as="sourcePoint"/>
+                        <mxPoint x="280" y="343" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c3a" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="322" as="sourcePoint"/>
+                        <mxPoint x="320" y="322" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_c3b" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#666666;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="372" as="sourcePoint"/>
+                        <mxPoint x="320" y="372" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_i3a" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="390" y="322" as="sourcePoint"/>
+                        <mxPoint x="440" y="322" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="line_i3b" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#999999;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="390" y="372" as="sourcePoint"/>
+                        <mxPoint x="440" y="372" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <!-- ========== 汉唐演变区域 ========== -->
+                <!-- 汉代区域框 -->
+                <mxCell id="han_box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6e6;strokeColor=#cc6666;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="40" width="140" height="100" as="geometry"/>
+                </mxCell>
+                <!-- 汉代标签 -->
+                <mxCell id="han_label" value="汉" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=SimSun;fontColor=#cc3333;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="645" y="45" width="35" height="35" as="geometry"/>
+                </mxCell>
+                <!-- 汉代要点 -->
+                <mxCell id="han_desc" value="&lt;b&gt;角抵戏时期&lt;/b&gt;&lt;br&gt;・杂技为主体&lt;br&gt;・西域幻术传入&lt;br&gt;・假形扮饰&lt;br&gt;・东海黄公" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;fontFamily=SimSun;fontColor=#993333;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="45" width="95" height="90" as="geometry"/>
+                </mxCell>
+                <!-- 演变箭头 -->
+                <mxCell id="evolution_arrow" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#996633;strokeWidth=3;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="710" y="145" as="sourcePoint"/>
+                        <mxPoint x="710" y="175" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <!-- 演变标注 -->
+                <mxCell id="evolution_label" value="延续发展" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontFamily=SimSun;fontColor=#996633;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="725" y="150" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <!-- 唐代区域框 -->
+                <mxCell id="tang_box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6ffe6;strokeColor=#66cc66;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="180" width="140" height="120" as="geometry"/>
+                </mxCell>
+                <!-- 唐代标签 -->
+                <mxCell id="tang_label" value="唐" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=SimSun;fontColor=#339933;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="645" y="185" width="35" height="35" as="geometry"/>
+                </mxCell>
+                <!-- 唐代要点 -->
+                <mxCell id="tang_desc" value="&lt;b&gt;散乐时期&lt;/b&gt;&lt;br&gt;・音乐性增强&lt;br&gt;・歌舞戏丰富&lt;br&gt;　（大面、踏摇娘）&lt;br&gt;・参军戏发展&lt;br&gt;・新增体育项目&lt;br&gt;　（蹴鞠、击鞠、拔河）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=8;fontFamily=SimSun;fontColor=#336633;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="185" width="95" height="110" as="geometry"/>
+                </mxCell>
+                <!-- 图例框 -->
+                <mxCell id="legend_box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f9f9f9;strokeColor=#999999;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="310" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <!-- 图例标题 -->
+                <mxCell id="legend_title" value="&lt;b&gt;图例&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="312" width="140" height="16" as="geometry"/>
+                </mxCell>
+                <!-- 图例内容 -->
+                <mxCell id="legend_han" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6e6;strokeColor=#cc6666;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="332" width="14" height="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_han_text" value="汉代已有" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="668" y="330" width="50" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_tang" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6ffe6;strokeColor=#66cc66;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="352" width="14" height="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_tang_text" value="唐代发展" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="668" y="350" width="50" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_both" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff5e6;strokeColor=#cc9933;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="372" width="14" height="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_both_text" value="汉唐贯穿" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="668" y="370" width="50" height="18" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

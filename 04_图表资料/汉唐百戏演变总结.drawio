@@ -1,0 +1,121 @@
+<mxfile host="65bd71144e">
+    <diagram name="汉唐百戏演变逻辑全景图" id="baixi_logic_v4">
+        <mxGraphModel dx="1200" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+
+                <!-- ==================== 整体背景容器 ==================== -->
+                <!-- 汉代背景 -->
+                <mxCell id="han_zone" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdfdfd;strokeColor=#dddddd;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="60" width="920" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="han_tag" value="汉代：原始艺术母体 (角抵戏时期)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=SimSun;fontStyle=1;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="70" width="300" height="20" as="geometry"/>
+                </mxCell>
+
+                <!-- 唐代背景 -->
+                <mxCell id="tang_zone" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fdfdfd;strokeColor=#dddddd;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="460" width="920" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="tang_tag" value="唐代：专业化分化与定型 (散乐时期)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=SimSun;fontStyle=1;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="470" width="300" height="20" as="geometry"/>
+                </mxCell>
+
+                <!-- ==================== 汉代：四大门类 (廖奔) ==================== -->
+                <mxCell id="h1" value="【杂技】&lt;br&gt;跟挂、寻橦&lt;br&gt;跳丸、掷倒" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontSize=11;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="110" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h2" value="【假形】&lt;br&gt;戏龙、戏鱼&lt;br&gt;扮饰鸟兽" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontSize=11;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="110" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h3" value="【舞蹈】&lt;br&gt;盘鼓舞&lt;br&gt;建鼓舞" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontSize=11;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="110" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="h4" value="【竞技】&lt;br&gt;角抵、手搏&lt;br&gt;蹴鞠" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontSize=11;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="110" width="180" height="60" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="han_source" value="渊源：原始祭祀、西域幻术、先秦倡优" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontFamily=SimSun;fontColor=#999999;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="180" width="300" height="20" as="geometry"/>
+                </mxCell>
+
+                <!-- ==================== 中间：核心驱动逻辑 (于海博) ==================== -->
+                <!-- 汇聚线 -->
+                <mxCell id="flow_h1" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#cccccc;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h1" target="p1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow_h2" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#cccccc;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="h2" target="p1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow_h3" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#cccccc;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="h3" target="p2" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow_h4" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#cccccc;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h4" target="p3" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+
+                <!-- 核心逻辑带 -->
+                <mxCell id="logic_belt" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=50;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="280" width="700" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="logic_tag" value="核心演变范式 (于海博：三大范式)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontFamily=SimSun;fontStyle=1;fontColor=#996600;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="285" width="300" height="20" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="p1" value="奇异技能&lt;br&gt;(惊奇)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="310" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2" value="滑稽嘲谑&lt;br&gt;(幽默)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="310" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3" value="武力对抗&lt;br&gt;(刺激)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=11;fontFamily=SimSun;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="310" width="100" height="40" as="geometry"/>
+                </mxCell>
+
+                <!-- 演变因子 -->
+                <mxCell id="factors" value="演变因子：音乐性增强、叙事性介入、宫廷大酺、外来融合" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontFamily=SimSun;fontColor=#996600;fontStyle=2;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="370" width="400" height="20" as="geometry"/>
+                </mxCell>
+
+                <!-- ==================== 底部：唐代分化 (散乐) ==================== -->
+                <!-- 分化线 -->
+                <mxCell id="flow_t1" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#cccccc;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="p1" target="branch1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow_t2" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#cccccc;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="p2" target="branch1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow_t3" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#cccccc;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="p1" target="branch2" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow_t4" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#cccccc;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="p3" target="branch3" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="branch1" value="【戏剧支脉】&lt;br&gt;叙事化、角色化&lt;br&gt;核心：歌舞戏、参军戏&lt;br&gt;代表：踏摇娘、大面" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6ffe6;strokeColor=#339933;fontSize=11;fontFamily=SimSun;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="520" width="220" height="80" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="branch2" value="【散乐支脉】&lt;br&gt;歌舞化、惊险化&lt;br&gt;核心：杂技、幻术、乐舞&lt;br&gt;代表：绳技、戴长竿" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6f2ff;strokeColor=#3366cc;fontSize=11;fontFamily=SimSun;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="520" width="220" height="80" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="branch3" value="【竞技支脉】&lt;br&gt;对抗性、大众化&lt;br&gt;核心：新兴体育项目&lt;br&gt;代表：击鞠、拔河、竞渡" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff5e6;strokeColor=#cc9933;fontSize=11;fontFamily=SimSun;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="520" width="220" height="80" as="geometry"/>
+                </mxCell>
+
+                <!-- 管理机构 -->
+                <mxCell id="mgmt" value="专业化标志：左右教坊设立" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontFamily=SimSun;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="630" width="220" height="30" as="geometry"/>
+                </mxCell>
+
+                <!-- ==================== 底部：核心结论 ==================== -->
+                <mxCell id="conclusion" value="结论：汉唐百戏演变是从“原始混合”向“专业分化”的质变。唐代散乐在继承三大范式的基因下，通过音乐化、叙事化和竞技化的改造，完成了向成熟艺术门类的过渡。" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontFamily=SimSun;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="730" width="800" height="40" as="geometry"/>
+                </mxCell>
+
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
