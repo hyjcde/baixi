@@ -271,7 +271,13 @@ THESES = [
 
 
 def build_docx(output_path):
-    """生成参考文献docx，宋体小四号（12pt），行距固定20磅，段前段后0行"""
+    """
+    生成参考文献docx，严格按论文格式规范：
+    - 大标题"参考文献"：黑体三号加粗居中，单倍行距，段前段后1行
+    - 一级分类（一、古籍文献）：黑体四号顶左，单倍行距，段前段后0.5行
+    - 二级分类（（一）经部）：楷体小四号顶左，行距20磅
+    - 条目正文：宋体小四号，行距20磅，段前段后0行
+    """
     doc = Document()
 
     style = doc.styles['Normal']
@@ -284,58 +290,102 @@ def build_docx(output_path):
     rpr = style.element.get_or_add_rPr()
     rpr.set(qn('w:rFonts'), '宋体')
 
-    def add_text(text, bold=False, size=Pt(12), color=None):
+    def _set_font(run, font_name, font_size, bold=False, color=None):
+        run.font.name = font_name
+        run.font.size = font_size
+        run.bold = bold
+        rp = run.element.get_or_add_rPr()
+        rp.set(qn('w:rFonts'), font_name)
+        rf = rp.find(qn('w:rFonts'))
+        if rf is None:
+            rf = etree.SubElement(rp, qn('w:rFonts'))
+        rf.set(qn('w:eastAsia'), font_name)
+        rf.set(qn('w:ascii'), font_name)
+        rf.set(qn('w:hAnsi'), font_name)
+        if color:
+            run.font.color.rgb = color
+
+    def add_main_title(text):
+        """黑体三号(16pt)加粗居中，单倍行距，段前段后1行"""
         p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+        p.paragraph_format.space_before = Pt(16)
+        p.paragraph_format.space_after = Pt(16)
+        run = p.add_run(text)
+        _set_font(run, '黑体', Pt(16), bold=True)
+        return p
+
+    def add_category_title(text):
+        """一级分类：黑体四号(14pt)顶左，单倍行距，段前段后0.5行"""
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+        p.paragraph_format.space_before = Pt(7)
+        p.paragraph_format.space_after = Pt(7)
+        run = p.add_run(text)
+        _set_font(run, '黑体', Pt(14), bold=True)
+        return p
+
+    def add_subcategory_title(text):
+        """二级分类：楷体小四号(12pt)顶左，行距20磅"""
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+        p.paragraph_format.line_spacing = Pt(20)
+        p.paragraph_format.space_before = Pt(3)
+        p.paragraph_format.space_after = Pt(3)
+        p.paragraph_format.first_line_indent = Cm(0.85)
+        run = p.add_run(text)
+        _set_font(run, '楷体', Pt(12), bold=False)
+        return p
+
+    def add_item(text, color=None):
+        """条目正文：宋体小四号(12pt)，行距20磅，段前段后0行"""
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         p.paragraph_format.first_line_indent = Cm(0)
         p.paragraph_format.space_before = Pt(0)
         p.paragraph_format.space_after = Pt(0)
         p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
         p.paragraph_format.line_spacing = Pt(20)
         run = p.add_run(text)
-        run.font.name = '宋体'
-        run.font.size = size
-        run.bold = bold
-        run.element.rPr.rFonts.set(qn('w:eastAsia'), '宋体')
-        if color:
-            run.font.color.rgb = color
+        _set_font(run, '宋体', Pt(12), color=color)
         return p
 
-    # 大标题
-    h = doc.add_heading('参考文献', level=0)
-    h.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    for run in h.runs:
-        run.font.name = '黑体'
-        run.font.size = Pt(22)
-        run.element.rPr.rFonts.set(qn('w:eastAsia'), '黑体')
+    # ── 大标题 ──
+    add_main_title('参考文献')
 
-    # 一、古籍文献
-    add_text('一、古籍文献', bold=True, size=Pt(14))
+    # ── 一、古籍文献 ──
+    add_category_title('一、古籍文献')
 
     for cat in ['jing', 'shi', 'zi', 'ji']:
         section = REFS[cat]
-        add_text(f'    {section["label"]}', bold=True, size=Pt(13))
+        add_subcategory_title(section['label'])
         for i, item in enumerate(section['items'], 1):
-            add_text(f'{i}. {item}')
+            add_item(f'{i}. {item}')
 
-    # 二、今人专著
-    add_text('二、今人专著', bold=True, size=Pt(14))
+    # ── 二、今人专著 ──
+    add_category_title('二、今人专著')
     all_books = MODERN_BOOKS + UNCERTAIN_BOOKS
     for i, item in enumerate(all_books, 1):
         is_uncertain = item in UNCERTAIN_BOOKS
-        add_text(f'{i}. {item}', color=RGBColor(0xFF, 0x00, 0x00) if is_uncertain else None)
+        add_item(f'{i}. {item}',
+                 color=RGBColor(0xFF, 0x00, 0x00) if is_uncertain else None)
 
-    # 三、期刊论文
-    add_text('三、期刊论文', bold=True, size=Pt(14))
+    # ── 三、期刊论文 ──
+    add_category_title('三、期刊论文')
     all_journals = JOURNALS + UNCERTAIN_JOURNALS
     for i, item in enumerate(all_journals, 1):
         is_uncertain = item in UNCERTAIN_JOURNALS
-        add_text(f'{i}. {item}', color=RGBColor(0xFF, 0x00, 0x00) if is_uncertain else None)
+        add_item(f'{i}. {item}',
+                 color=RGBColor(0xFF, 0x00, 0x00) if is_uncertain else None)
 
-    # 四、学位论文
+    # ── 四、学位论文 ──
     if THESES:
-        add_text('四、学位论文', bold=True, size=Pt(14))
+        add_category_title('四、学位论文')
         for i, item in enumerate(THESES, 1):
-            add_text(f'{i}. {item}')
+            add_item(f'{i}. {item}')
 
     doc.save(output_path)
     total = sum(len(REFS[c]['items']) for c in REFS) + len(all_books) + len(all_journals) + len(THESES)
