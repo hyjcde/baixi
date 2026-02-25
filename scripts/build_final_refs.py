@@ -9,8 +9,8 @@ import sys
 import re
 import copy
 from docx import Document
-from docx.shared import Pt, Cm
-from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import Pt, Cm, Twips, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 from docx.oxml.ns import qn
 from lxml import etree
 
@@ -135,6 +135,7 @@ MODERN_BOOKS = [
     '陈永正主编：《中国方术大辞典》，广州：中山大学出版社，1991年。',
     '李建民：《中国古代游艺史——乐舞百戏与社会生活之研究》，台北：东大图书，1993年。',
     '周楞伽：《幻术奇谈》，上海：上海古籍出版社，1993年。',
+    '林梅村：《汉唐西域与中国文明》，北京：文物出版社，1998年。',
     '蔡鸿生：《唐代九姓胡与突厥文化》，北京：中华书局，1998年。',
     '胡大雷：《中古文学集团》，桂林：广西师范大学出版社，1996年。',
     '刘荫柏：《中国古代杂技》，北京：商务印书馆，1997年。',
@@ -195,6 +196,7 @@ JOURNALS = [
     '郗文倩：《张衡〈西京赋〉"鱼龙曼延"发覆——兼论佛教幻术的东传及其艺术表现》，《文学遗产》2012年第6期。',
     '林移刚：《汉族民俗中的"狮子"形象及其内涵》，《艺术百家》2012年。',
     '黎国韬：《汉唐百戏管理机构考》，《中华戏曲》第45辑，北京：文化艺术出版社，2012年。',
+    '郑楠：《幻术在汉代的兴盛与禁毁》，《唯实（现代管理）》2014年第8期。',
     '泽吉：《西藏乐舞百戏研究与探讨》，《西藏大学学报（社会科学版）》2013年。',
     '张玉新：《汉画像乐舞百戏受众情况的考察与分析》，《古籍整理研究学刊》2014年第6期。',
     '于海博：《论唐代百戏的界定》，《乐府学》2015年第2期。',
@@ -214,6 +216,25 @@ JOURNALS = [
     '宋永祥：《"观戏赋"的文本书写及其价值》，《文学研究》2023年。',
     '唐一丹：《论汉代百戏之实与名》，《音乐探索》2024年第1期。',
     '董迎春：《文明互鉴视域下汉唐百戏杂技的变异与融通》，《学术探索》2024年。',
+]
+
+# 需要红字标注的不确定条目（出版信息待确认）
+UNCERTAIN_BOOKS = [
+    '黎虎：《狮舞流沙万里来》（出版信息待确认）。',
+    '谷包：《古代新疆的音乐舞蹈与古代社会》（出版信息待确认）。',
+    '付明华：《龟兹文明及舞蹈艺术》（出版信息待确认）。',
+    '周泓：《古代汉地之部分西域文化考辩》（出版信息待确认）。',
+]
+
+UNCERTAIN_JOURNALS = [
+    '刘峻骧：中国杂技艺术源流系列论文，《社会科学战线》1980年第2—4期。',
+    '黎国韬、龙赛州：《中国龙舞渊源新探》（刊名、年份待确认）。',
+    '王青：《〈种梨〉与西域幻术——古典小说与幻术之一》，《古典文学知识》2014年（期号待确认）。',
+    '王青：《〈偷桃〉与"印度神仙索"——古典小说与幻术之二》，《古典文学知识》（年份期号待确认）。',
+    '王青：《印度幻术与〈拾遗记〉——古典小说与幻术之三》，《古典文学知识》（年份期号待确认）。',
+    '王青：《域外幻术的传入与〈搜神记〉——古典小说与幻术之四》，《古典文学知识》（年份期号待确认）。',
+    '王青：《佛教僧侣的幻术展示——古典小说与幻术之五》，《古典文学知识》（年份期号待确认）。',
+    '王青：《中古小说中的幻术——古典小说与幻术之六》，《古典文学知识》（年份期号待确认）。',
 ]
 
 THESES = [
@@ -250,27 +271,33 @@ THESES = [
 
 
 def build_docx(output_path):
-    """生成参考文献docx"""
+    """生成参考文献docx，宋体小四号（12pt），行距固定20磅，段前段后0行"""
     doc = Document()
 
-    # 默认字体
     style = doc.styles['Normal']
     style.font.name = '宋体'
     style.font.size = Pt(12)
-    style.paragraph_format.line_spacing = 1.5
+    style.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+    style.paragraph_format.line_spacing = Pt(20)
+    style.paragraph_format.space_before = Pt(0)
+    style.paragraph_format.space_after = Pt(0)
     rpr = style.element.get_or_add_rPr()
     rpr.set(qn('w:rFonts'), '宋体')
 
-    def add_text(text, bold=False, size=Pt(12)):
+    def add_text(text, bold=False, size=Pt(12), color=None):
         p = doc.add_paragraph()
         p.paragraph_format.first_line_indent = Cm(0)
         p.paragraph_format.space_before = Pt(0)
-        p.paragraph_format.space_after = Pt(3)
+        p.paragraph_format.space_after = Pt(0)
+        p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+        p.paragraph_format.line_spacing = Pt(20)
         run = p.add_run(text)
         run.font.name = '宋体'
         run.font.size = size
         run.bold = bold
         run.element.rPr.rFonts.set(qn('w:eastAsia'), '宋体')
+        if color:
+            run.font.color.rgb = color
         return p
 
     # 大标题
@@ -292,13 +319,17 @@ def build_docx(output_path):
 
     # 二、今人专著
     add_text('二、今人专著', bold=True, size=Pt(14))
-    for i, item in enumerate(MODERN_BOOKS, 1):
-        add_text(f'{i}. {item}')
+    all_books = MODERN_BOOKS + UNCERTAIN_BOOKS
+    for i, item in enumerate(all_books, 1):
+        is_uncertain = item in UNCERTAIN_BOOKS
+        add_text(f'{i}. {item}', color=RGBColor(0xFF, 0x00, 0x00) if is_uncertain else None)
 
     # 三、期刊论文
     add_text('三、期刊论文', bold=True, size=Pt(14))
-    for i, item in enumerate(JOURNALS, 1):
-        add_text(f'{i}. {item}')
+    all_journals = JOURNALS + UNCERTAIN_JOURNALS
+    for i, item in enumerate(all_journals, 1):
+        is_uncertain = item in UNCERTAIN_JOURNALS
+        add_text(f'{i}. {item}', color=RGBColor(0xFF, 0x00, 0x00) if is_uncertain else None)
 
     # 四、学位论文
     if THESES:
@@ -307,7 +338,10 @@ def build_docx(output_path):
             add_text(f'{i}. {item}')
 
     doc.save(output_path)
+    total = sum(len(REFS[c]['items']) for c in REFS) + len(all_books) + len(all_journals) + len(THESES)
+    uncertain_count = len(UNCERTAIN_BOOKS) + len(UNCERTAIN_JOURNALS)
     print(f"参考文献已保存到: {output_path}")
+    print(f"总计 {total} 条（其中红字标注待确认 {uncertain_count} 条）")
 
 
 def normalize_footnotes(docx_path, output_path):
@@ -367,21 +401,27 @@ def print_refs():
         for i, item in enumerate(section['items'], 1):
             print(f"  {i}. {item}")
 
+    all_books = MODERN_BOOKS + UNCERTAIN_BOOKS
+    all_journals = JOURNALS + UNCERTAIN_JOURNALS
+
     print("\n\n二、今人专著\n")
-    for i, item in enumerate(MODERN_BOOKS, 1):
-        print(f"  {i}. {item}")
+    for i, item in enumerate(all_books, 1):
+        tag = " [待确认]" if item in UNCERTAIN_BOOKS else ""
+        print(f"  {i}. {item}{tag}")
 
     print("\n\n三、期刊论文\n")
-    for i, item in enumerate(JOURNALS, 1):
-        print(f"  {i}. {item}")
+    for i, item in enumerate(all_journals, 1):
+        tag = " [待确认]" if item in UNCERTAIN_JOURNALS else ""
+        print(f"  {i}. {item}{tag}")
 
     if THESES:
         print("\n\n四、学位论文\n")
         for i, item in enumerate(THESES, 1):
             print(f"  {i}. {item}")
 
-    total = sum(len(REFS[c]['items']) for c in REFS) + len(MODERN_BOOKS) + len(JOURNALS) + len(THESES)
-    print(f"\n\n总计 {total} 条参考文献")
+    total = sum(len(REFS[c]['items']) for c in REFS) + len(all_books) + len(all_journals) + len(THESES)
+    uncertain_count = len(UNCERTAIN_BOOKS) + len(UNCERTAIN_JOURNALS)
+    print(f"\n\n总计 {total} 条参考文献（其中待确认 {uncertain_count} 条）")
 
 
 if __name__ == '__main__':
